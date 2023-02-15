@@ -1,0 +1,11 @@
+POST http://localhost:3333/alcaldia/registro-usuarios
+Content-Type: application/json
+
+{
+    "codigo_usuario":10010,
+    "nombre_usuario":"andres",
+    "contrasena":"10001",
+    "email":"10001@gil.co",
+    "telefono":"10001"
+
+}
