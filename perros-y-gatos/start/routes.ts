@@ -19,7 +19,17 @@
 */
 
 import Route from '@ioc:Adonis/Core/Route'
+import AnimalsController from './../app/Controllers/Http/AnimalsController';
 
 Route.get('/', async () => {
   return { hello: 'world' }
 })
+
+Route.group( () => {
+  Route.post('/registrar-animal','AnimalsController.setRegistrarAnimals')
+  Route.get('/consultar-animales','AnimalsController.getConsultarAnimales')
+  Route.get('/filtrar-especies/:especie','AnimalsController.getConsultaPorEspecie')
+  Route.get('/filtrar-edad_8','AnimalsController.getConsultaPorMenora8')
+  Route.put('/modificar-aniamles/:id','AnimalsController.setModificarAnimales')
+  Route.delete('/eliminar-aniamles/:id','AnimalsController.setEliminaReigstro')
+}).prefix('/api')
